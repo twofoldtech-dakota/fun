@@ -8,19 +8,20 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        beige: '#FEF5EC',
-        black: '#111'
+        beige: "#FEF5EC",
+        black: "#111",
       },
       fontFamily: {
-        serif: ['var(--font-lora)']
+        sans: ["var(--font-inter)"],
+        mono: ["var(--font-roboto-mono)"],
       },
       minHeight: {
-        screenHeightWithoutHeader: 'calc(100vh - 101px)'
+        screenHeightWithoutHeader: "calc(100vh - 101px)",
       },
       height: {
-        screenHeightWithoutHeader: 'calc(100vh - 101px)'
-      }
+        screenHeightWithoutHeader: "calc(100vh - 101px)",
+      },
     },
   },
   plugins: [],
-}
+};

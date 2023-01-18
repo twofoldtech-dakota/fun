@@ -2,29 +2,26 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Container } from "./container";
 import { CartIcon } from "./icons/cart";
-import { usePathname } from "next/navigation";
 
 const links = [
-  { href: "/products", label: "Products" },
-  { href: "/our-story", label: "Our Story" },
-  { href: "/workshop", label: "Workshop" },
-  { href: "/showroom", label: "Showroom" },
-  { href: "/long-name", label: "A very long name to show the animation" },
+  { href: "/blog", label: "Blog" },
+  { href: "/about", label: "About" },
 ];
 
 export const Header = () => {
   const path = usePathname();
 
   return (
-    <header className="bg-beige relative z-10 w-full">
-      <Container className="flex items-center border-b border-black py-8">
+    <header className="relative z-10 w-full bg-beige">
+      <Container className="flex items-center py-8 border-b border-black">
         <Link href="/" className="text-3xl font-bold">
-          Fur Nature
+          Grasp
         </Link>
         <nav>
-          <ul className="[&_li]:ml-4 ml-12 flex">
+          <ul className="ml-12 flex [&_li]:ml-4">
             {links.map((link) => (
               <li key={link.href}>
                 <Link className="relative" href={link.href}>
@@ -40,10 +37,10 @@ export const Header = () => {
             ))}
           </ul>
         </nav>
-        <button className="ml-auto flex flex-row">
+        <button className="flex flex-row ml-auto">
           <CartIcon />
           <span className="sr-only">Open cart</span>
-          <span className="ml-2 flex h-5 w-5 items-center justify-center rounded-full bg-black text-white">
+          <span className="flex items-center justify-center w-5 h-5 ml-2 text-white bg-black rounded-full">
             1
           </span>
           <span className="sr-only">items in cart cart</span>

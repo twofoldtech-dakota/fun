@@ -1,14 +1,18 @@
+import { Inter, Roboto_Mono } from '@next/font/google';
+import { Footer } from "../components/footer";
 import { Header } from "../components/header";
 import "../styles/globals.css";
-import { Lora } from "@next/font/google";
-import { Footer } from "../components/footer";
 
-// We use Next's new font loader here, definitely check it out ;)
-// @see: https://beta.nextjs.org/docs/optimizing/fonts
-const lora = Lora({
-  weight: ["400", "500"],
-  variable: "--font-lora",
-  display: "swap",
+const inter = Inter({
+  subsets: ["latin"],
+  variable: '--font-inter',
+  display: 'optional'
+});
+
+const roboto_mono = Roboto_Mono({
+  subsets: ["latin"],
+  variable: '--font-roboto-mono',
+  display: 'optional'
 });
 
 export default function RootLayout({
@@ -17,7 +21,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={lora.variable}>
+    <html lang="en" className={`${inter.variable} ${roboto_mono.variable}`}>
       <head />
       <body>
         <Header />
