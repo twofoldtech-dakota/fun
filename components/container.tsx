@@ -12,4 +12,4 @@ export const Container = ({
 }: {
   children: React.ReactNode;
   className?: string;
-}) => <div className={classNames("mx-12", className)}>{children}</div>;
+}) => <div className={classNames("", className)}>{children}</div>;
